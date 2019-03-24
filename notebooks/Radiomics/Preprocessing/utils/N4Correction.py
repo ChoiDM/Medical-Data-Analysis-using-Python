@@ -14,5 +14,6 @@ def n4correction(input_img):
     corrector = sitk.N4BiasFieldCorrectionImageFilter()
 
     output = corrector.Execute(inputImage, maskImage)
+    output = sitk.GetArrayFromImage(output)
 
     return output
